@@ -5,11 +5,10 @@ open class Products(val nombre:String, val price:Double) {
     open fun calculatePriceFinal():Double { // calculando el precio final
         return price;
     }
-
-        open fun descriptionProduct(): String { // Metodo para la Description del Producto
+    open fun descriptionProduct(): String { // Metodo para la Description del Producto
             return "$nombre cuesta $price"
-        }
     }
+}
 
 
 // Clase hija A: Productos electronicos
@@ -18,7 +17,6 @@ class Electrodomesticos(nombre:String, price:Double, val warranty: Int): Product
         val discount = 0.10
         return price - (price * discount)
     }
-
     override fun descriptionProduct(): String {
         return "${super.descriptionProduct()} con $warranty anios de garantia"
     }
@@ -36,6 +34,7 @@ class Clothing(nombre:String, price:Double, val size:String): Products(nombre, p
         return  "${super.descriptionProduct()} de talla $size"
     }
 }
+
 
 // Clase hija C: para Productos de Alimentos
 class Food(nombre:String, price:Double, val expirationDate:String): Products(nombre, price) {
