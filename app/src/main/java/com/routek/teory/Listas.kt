@@ -1,42 +1,59 @@
 package com.routek.teory
+
 fun main() {
-    /* ---- Listas Mutable con DECLARACION DE TIPO -------   */
-    val lenguages:MutableList<String> = mutableListOf("kotlin", "typescript", "dart", "python")
+    val frutas = mutableListOf("pera", "frea", "uva", "manzana")
+    println("mis frutas son => $frutas")
 
-    /* --- Ejemplo de otra lista para hacer Operaciones con ellas */
-    val frutas = mutableListOf("uva", "fresa", "mandarina", "pera", "sandia", "mango")
+    // Propertys
+    val qlist = frutas.size
+    println("tengo $qlist frutas")  // Quantity
+    val indexUva = frutas.indexOf("uva")
+    println("el indice de uva es $indexUva") // Indice
+    val containPera = frutas.contains("pera")
+    println("contiene pera?, $containPera") // Contain Bool
 
-// Operaciones de Comprobacion
-    val cantidadFrutas = frutas.size  // 1 Tamano de lista
-    println("la cantidad frutas es $cantidadFrutas")
+    //GET elements
+    val anyFruta = frutas.get(1)
+    println("encontrando una fruta cualquiera $anyFruta")
+    val anyFrutas = frutas[2]
+    println("otra manera de traer un elemento de una lista $anyFrutas")
+    val lasFruta = frutas.last()
+    println("la ultima fruta es $lasFruta")
+    val fisFruta = frutas.first()
+    println("la primera fruta es $fisFruta")
 
+    //ADD elements
+    frutas.add(0, "toronja")
+    println("more frutas al inicio: $frutas")
+    frutas.add("frambuesa")
+    println("add frutas al Final: $frutas")
+    frutas.add(2, "coco")
+    println("agregando frutas a cualquier lugar: $frutas")
 
+    //REMOVE elemnts
+    frutas.removeAt(0) // 1 metodo
+    println("quitanto el 1er elemento de frutas: $frutas")
+    frutas.removeFirst() // 2 metodo
+    println("quitando el Otro 1er elemento de frutas: $frutas")
+    frutas.removeLast()
+    println("quitando el ultimo elemento con metodo last() $frutas")
+    frutas.removeAt(frutas.size-1)
+    println("quitando el ultimo elemento de frutas con algo mas clasico $frutas")
+    frutas.removeAt(1)
+    println("quitnado un elemento de cualquier pocicion $frutas")
 
-    val indexPera = frutas.indexOf("pera")  // 2 Indice del Array
-    val estaPlatano = frutas.contains("platano") // 3 Verificar si contiene un Elmento mi Lista
+    // Extrae PORCION
+    val days = mutableListOf("lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo")
+    val dayLaborables = days.subList(0, 5)
+    println("los dias laborables son $dayLaborables")
 
-// Encontra Elemntos
-    val ultimaFruta = frutas.last() // 4 Traer el Ultimo elemento
-    val primeraFruta = frutas.first()  // 5 Traer mi Primer elemento
-    val any1Fruta = frutas[2] // 6.1 Traendo cualquier fruta de una lista
-    val any2Fruta = frutas.get(2) // 6.2 otra forma de traer cualquier elemento de una lista
-
-// Agregar elementos
-    val frutaAddInicio = frutas.add(0, "Melocoton") // 7 Agregar al Inicio
-    val frutaAddFinal = frutas.add("arandano")
-    val frutaAnyPosition = frutas.add(2, "naranja")
-
-// Quitar Elementos
-
-
-    // 1 Tamano de Lista
-    println("el indidice de pera es $indexPera") // 2 Indice del Elemento
-    println(estaPlatano) // 3 Contiene un Elmento
-    println("mi ultima fruta es $ultimaFruta") // 4 Ultimo Elemento
-    println("la primera furta es $primeraFruta") // 5 Primer elemento
-
-    println("frutas modificadas $frutas")
-
+    // REPLACE Uno por Otro
+    val products = mutableListOf("cocina", "ropero", "borrador" ,"frigider", "televisor", "lapiz", "lavadora")
+    println("lista original de productos $products")
+    products[2] = "muebles"
+    println("imprimiendo la lista de Productos modificada $products")
+    products.set(5, "armario") // otra manera de poder cambiar uno por otor
+    println("esto es la lista de productos final modificada $products")
 
 }
 
